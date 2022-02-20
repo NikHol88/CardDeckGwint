@@ -1,5 +1,6 @@
 package org.example.repository;
 
+import org.example.component.Card;
 import org.springframework.jdbc.core.RowMapper;
 
 

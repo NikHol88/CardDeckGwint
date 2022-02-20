@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form class="guruweba_example_form" name="feedback" method="POST" action="/setname">
+    <div class="guruweba_example_caption">Обратная связь web</div>
+    <div class="guruweba_example_infofield">Тема обращения</div>
+    <select name="theme" required="required">
+        <option value="">Выберите масть</option>
+        <option>Королевства севера</option>
+        <option>Скоятели</option>
+        <option>Нильфгаард</option>
+        <option>Чудовища</option>
+    </select>
+    <div>Ваше имя</div>
+    <input type="text" name="name" required="required">
+    <!--<textarea name="message"></textarea>-->
+    <input type="submit" name="submit_btn" value="Отправить">
+</form>
+<form class="guruweba_example_form" name="feedback" method="POST" action="/sqlcom">
+    <input type="submit" name="submit_btn" value="SQL">
+</form>
+</body>
+</html>

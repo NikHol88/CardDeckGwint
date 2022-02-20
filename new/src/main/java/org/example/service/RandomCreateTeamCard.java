@@ -1,32 +1,43 @@
 
 package org.example.service;
 
-import org.example.service.CardToFile;
-import org.example.repository.Card;
-import org.example.repository.Card;
+import org.example.component.AllCardAllPlayers;
+import org.example.repository.CardRepository;
+import org.example.component.Card;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.io.IOException;
 import java.util.*;
 
 @Service
 public class RandomCreateTeamCard {
 
-    List<Card> allcard;
+   /* List<Card> allcard;
     List<Card> frakt = new ArrayList<Card>();
 
-    List<Card> coloda;
+    List<Card> coloda;*/
+    @Autowired
+    CardRepository cardRepository;
+    @Autowired
+    AllCardAllPlayers allCard;
     public RandomCreateTeamCard(){
 
     }
-    public void createTeamCard(List<Card> allcard) {
-        this.allcard = allcard;
+    public List<Card> createTeamCard(String namefrakt) {
+List<Card> allcard=allCard.getAllcard();
+        List<Card> frakt = new ArrayList<Card>();
         Set<Card> cardSet = new HashSet<Card>();
         LinkedList<Card> coloda = new LinkedList<Card>();
+        int f=0;
+switch (namefrakt){
+    case ("Королевства севера"):f=0;break;
+    case ("Скоятели"):f=3;break;
+    case ("Нильфгаард"):f=1;break;
+    case ("Чудовища"):f=2;break;
 
+}
         for (int i = 0; i < allcard.size(); i++) {
-            if (allcard.get(i).getFrakt() == 2) {
+            if (allcard.get(i).getFrakt() == f||allcard.get(i).getFrakt()==5) {
                 frakt.add(allcard.get(i));
 
             }
@@ -39,10 +50,10 @@ public class RandomCreateTeamCard {
             cardSet.add(frakt.get(random.nextInt(frakt.size())));
             //coloda.addFirst(frakt.get(random.nextInt(frakt.size())));
             point = point + cardSet.iterator().next().getPoint();
-            //System.out.println(coloda);
+            //System.out.println(cardSet);
         }
         coloda.addAll(cardSet);
-        this.coloda = coloda;
+        return coloda;
 
     }
 }

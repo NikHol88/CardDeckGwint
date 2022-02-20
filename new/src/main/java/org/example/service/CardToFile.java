@@ -1,8 +1,7 @@
 
 package org.example.service;
 
-import org.example.repository.Card;
-import org.example.repository.Card;
+import org.example.component.Card;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Service;
 
@@ -10,24 +9,20 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
-@Service
-@Scope(value = "singleton")
+//@Service
+//@Scope(value = "singleton")
 public class CardToFile {
-    String name = "D:\\INI\\PROJECT\\SpringCalc\\src\\main" +
-            "\\resourses\\Cards2.csv";
-List<Card> arrayList ;
+    String name = "D:\\INI\\New_Project2\\CardDeckGwint\\new\\src\\main\\resources\\Cards3.csv";
+
     public CardToFile() {
 
     }
 
-    public List<Card> getArrayList() {
-        return arrayList;
-    }
+
    public List<Card> createlistCard()
             throws IOException {
 
-        InputStream listValues = new FileInputStream("D:\\INI\\PROJECT" +
-                "\\SpringCalc\\src\\main\\resourses\\Cards2.csv");
+        InputStream listValues = new FileInputStream(name);
 
         List<Card> records = new ArrayList<Card>();
 

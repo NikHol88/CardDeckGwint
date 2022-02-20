@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form class="guruweba_example_form" name="feedback" method="POST" action="/save">
+
+    <div>Ваше имя</div>
+    <input type="text" name="name" required="required">
+    <div>Карты</div>
+
+    <textarea name="message">Карты
+    </textarea>
+    <input type="submit" name="submit_btn" value="Создать">
+</form>
+<div></div>
+<form class="guruweba_example_form" name="feedback" method="GET" action="/save">
+    <input type="submit" name="submit_btn" value="Загрузить">
+</form>
+<div></div>
+<form class="guruweba_example_form" name="feedback" method="GET" action="/sqlcom">
+    <input type="submit" name="submit_btn" value="SQL">
+</form>
+</body>
+</html>
