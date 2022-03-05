@@ -12,12 +12,8 @@ import java.util.*;
 @Service
 public class RandomCreateTeamCard {
 
-   /* List<Card> allcard;
-    List<Card> frakt = new ArrayList<Card>();
 
-    List<Card> coloda;*/
-    @Autowired
-    CardRepository cardRepository;
+
     @Autowired
     AllCardAllPlayers allCard;
     public RandomCreateTeamCard(){
