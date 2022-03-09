@@ -3,6 +3,7 @@ package org.example.controller;
 import org.example.component.AllCardAllPlayers;
 import org.example.repository.CardRepository;
 import org.example.component.Player;
+import org.example.service.CardToFile;
 import org.example.service.ContrToRep;
 import org.example.service.PlayerSerice;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,8 +26,8 @@ public class SpringBootController {
     AllCardAllPlayers allCardAllPlayers;
 @Autowired
     ContrToRep contrToRep;
-   // @Autowired
-  //  CardToFile cardToFile;
+    @Autowired
+    CardToFile cardToFile;
     @GetMapping("/123")
     public String sayHello(/*@RequestParam(value = "name",required=false)  String name,
                            @RequestParam(value="frakt",required = false) String surname*/){
@@ -34,9 +35,10 @@ public class SpringBootController {
         System.out.println("hello   ");
         return "load";
     }
-    @PostMapping("/load")
+    @PostMapping ("/load")
     public String loadPlayer(@RequestBody MultiValueMap<String, String> formData) {
       String load =playerSerice.loadPlayer(formData);
+      System.out.println(load);
       return load;
     }
     @PostMapping("/save")
@@ -50,6 +52,7 @@ return "index";
     @GetMapping("/sqlcom")
     public String sqlCom() throws IOException {
         contrToRep.getCardRepository().sqlDelPlayer();
+        contrToRep.getCardRepository().sqlUpdateListCard(cardToFile.createlistCard());
        // System.out.println("SQL");
 
         return "index";

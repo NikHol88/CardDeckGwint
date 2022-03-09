@@ -9,10 +9,10 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
-//@Service
-//@Scope(value = "singleton")
+@Service
+@Scope(value = "singleton")
 public class CardToFile {
-    String name = "D:\\INI\\New_Project2\\CardDeckGwint\\new\\src\\main\\resources\\Cards3.csv";
+    String name = "D:\\INI\\New_Project2\\CardDeckGwint\\new\\src\\main\\resources\\CardsAll.csv";
 
     public CardToFile() {
 

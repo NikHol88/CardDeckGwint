@@ -38,10 +38,10 @@ player.setCards(randomCreateTeamCard.createTeamCard(String.valueOf(map.get("them
     }
     public String loadPlayer(MultiValueMap<String, String> formData){
         try{
-            String formname = String.valueOf(formData.get("name"));
+            String formname = String.valueOf(formData.get("name").get(0));
             Player player = allCardAllPlayers.getPlayerMap().get(formname);
+
             int i = player.getId();
-            System.out.println(allCardAllPlayers.getPlayerMap().get(formname));
             String loadfile = "<!DOCTYPE html>\n" +
                     "<html lang=\"en\">\n" +
                     "<head>\n" +
@@ -71,6 +71,7 @@ player.setCards(randomCreateTeamCard.createTeamCard(String.valueOf(map.get("them
                     "</html>";
             String name = "D:\\INI\\New_Project2\\CardDeckGwint\\new\\src\\main\\resources\\templates\\load"+i+".html";
             String namefile ="load"+i;
+            System.out.println(namefile+"!!!");
             FileOutputStream out = null;
             try {
                 out = new FileOutputStream(name);
@@ -86,7 +87,7 @@ player.setCards(randomCreateTeamCard.createTeamCard(String.valueOf(map.get("them
             return namefile;}
         catch (Exception e) {
             e.printStackTrace();
-            return "error"; }
+            return "error1"; }
 
 
          }
